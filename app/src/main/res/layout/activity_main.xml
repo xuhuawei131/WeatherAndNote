@@ -1,0 +1,248 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/ToolBarTitleText"
+            app:contentScrim="#46a8ba"
+            app:expandedTitleMarginEnd="48dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/transparentText"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:id="@+id/head_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_collapseMode="pin"
+                app:layout_collapseParallaxMultiplier="0.7">
+
+                <ImageView
+                    android:id="@+id/iv_bing_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"/>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="30dp">
+
+                            <TextView
+                                android:id="@+id/city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="安阳"
+                                android:textColor="@color/white"
+                                android:textSize="25sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/changecity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/setting_bg"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:text="@string/changecity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_weather"
+                            android:layout_width="80dip"
+                            android:layout_height="80dip"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:paddingLeft="5dip"
+                            android:paddingRight="5dip"
+                            />
+
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout03"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="right"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="30dip"
+                            >
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="日期：周三 05月 18日 "
+                                android:textColor="@color/gravy"
+                                android:textSize="@dimen/weather_info_text"
+                                />
+
+                            <TextView
+                                android:id="@+id/weather"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="天气：晴"
+                                android:textColor="@color/gravy"
+                                android:textSize="@dimen/weather_info_text"
+                                />
+
+                            <TextView
+                                android:id="@+id/temperature"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="温度：30~15’C"
+                                android:textColor="@color/gravy"
+                                android:textSize="@dimen/weather_info_text"
+                                />
+
+                            <TextView
+                                android:id="@+id/wind"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="风向：南风微风"
+                                android:textColor="@color/gravy"
+                                android:textSize="@dimen/weather_info_text"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_about"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/setting_bg"
+                            android:gravity="center"
+                            android:padding="2dp"
+                            android:text="关于"
+                            android:textColor="@color/white"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_scan_all"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/setting_bg"
+                            android:gravity="center"
+                            android:padding="2dp"
+                            android:text="查看全部"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/toolbar_tab"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+            android:fillViewport="false"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll"
+            app:tabIndicatorColor="#0835f8"
+            app:tabIndicatorHeight="2.0dp"
+            app:tabSelectedTextColor="#0835f8"
+            app:tabTextColor="#ced0d3">
+
+
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_vp_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginRight="@dimen/fab_margin_right"
+        android:src="@mipmap/ic_fab_add"
+        app:borderWidth="0dp"
+        app:fabSize="normal"/>
+</android.support.design.widget.CoordinatorLayout>

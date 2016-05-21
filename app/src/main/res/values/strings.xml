@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">天气备忘录</string>
+    <string name="changecity">切换城市</string>
+</resources>

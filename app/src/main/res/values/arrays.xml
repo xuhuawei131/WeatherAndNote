@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type">
+        <item>学习</item>
+        <item>工作</item>
+        <item>运动</item>
+        <item>日常</item>
+
+    </string-array>
+</resources>

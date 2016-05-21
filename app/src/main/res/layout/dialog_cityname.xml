@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFBB33"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:scaleType="center"
+        android:text="修改城市"
+        />
+
+    <EditText
+        android:id="@+id/id_txt_cityname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="16dp"
+        android:hint="输入城市名字"
+        android:inputType="textEmailAddress"/>
+
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4e98de</color>
+    <color name="colorPrimaryDark">#36dfb5</color>
+    <color name="colorAccent">#e7185d</color>
+    <color name="black">#d8d9f4</color>
+    <color name="white">#dddddd</color>
+    <color name="gravy">#c1c1c1</color>
+    <color name="duty_name_color">#5156fc</color>
+    <color name="duty_title_color">#8ce61f6e</color>
+    <color name="duty_info_color">#c88c8c8c</color>
+    <color name="add_back_color">#b4d4f4f3</color>
+    <color name="base">#44000000</color>
+    <color name="arrow">#2af4ff</color>
+    <color name="highlight">#ddd</color>
+    <color name="floating_label">#d04ddecd</color>
+</resources>

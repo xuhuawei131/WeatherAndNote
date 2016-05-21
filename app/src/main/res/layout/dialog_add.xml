@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#2af4ff"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:scaleType="center"
+        android:text="添加任务"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="任务名：    "/>
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请在此输入任务标题"
+            android:textColorHint="@color/gravy"/>
+
+    </LinearLayout>
+
+    <fr.ganfra.materialspinner.MaterialSpinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:ms_alignLabels="false"
+        app:ms_arrowColor="@color/arrow"
+        app:ms_arrowSize="16dp"
+        app:ms_baseColor="@color/base"
+        app:ms_enableErrorLabel="false"
+        app:ms_enableFloatingLabel="false"
+        app:ms_floatingLabelColor="@color/floating_label"
+        app:ms_floatingLabelText="floating label"
+        app:ms_highlightColor="@color/highlight"
+        app:ms_hint="请选择类别"
+        app:ms_hintColor="@color/base"
+        app:ms_multiline="false"
+        app:ms_thickness="2dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:text="详细内容："/>
+
+    <EditText
+        android:id="@+id/et_info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="30dp"
+        android:gravity="top"
+        android:hint="请在此输入详细内容"
+        android:textColorHint="@color/gravy"/>
+</LinearLayout>
