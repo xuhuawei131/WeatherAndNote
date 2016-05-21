@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +57,6 @@ public class DailyFragment extends RxFragment {
         super.onCreate(savedInstanceState);
         dbservices = DbServices.getInstance(getContext());
         mytype = getArguments().getString(TYPE);
-        Log.i("测试","--------------------onCreate"+mytype);
     }
 
     @Nullable
@@ -80,15 +78,6 @@ public class DailyFragment extends RxFragment {
         _rxBus = ((MainActivity) getActivity()).getRxBusSingleton();
         Rv_duty = (RecyclerView) rootView.findViewById(R.id.rv_duty);
         Rv_duty.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        Log.i("测试","--------------------onResume"+mytype);
         //查询数据库
         datas = DbServices.getInstance(getContext()).queryNote(mytype);
         //实例化Adapter
@@ -128,6 +117,12 @@ public class DailyFragment extends RxFragment {
                 return true;
             }
         });
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
 

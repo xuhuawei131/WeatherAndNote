@@ -69,7 +69,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="left"
-                                android:text="安阳"
+                                android:text="杭州"
                                 android:textColor="@color/white"
                                 android:textSize="25sp"
                                 />

@@ -24,6 +24,7 @@ public class AddDialogFragment extends DialogFragment {
 
     private MaterialSpinner bp;
 
+    //创建接口在Acitvity中调用
     public interface AddDutyInputListener {
         void onAddDutyInputComplete(String title, String type, String info);
     }
@@ -31,7 +32,7 @@ public class AddDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        String[] ITEMS = {"学习", "工作", "运动",  "日常"};
+        String[] ITEMS = {"学习", "工作", "运动", "日常"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, ITEMS);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -44,13 +45,12 @@ public class AddDialogFragment extends DialogFragment {
         bp.setAdapter(adapter);
 
         builder.setView(view)
-                // Add action buttons
                 .setPositiveButton("确定",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 AddDutyInputListener listener = (AddDutyInputListener) getActivity();
-                                listener.onAddDutyInputComplete(et_title.getText().toString(),bp.getSelectedItem().toString(), et_info.getText().toString());
+                                listener.onAddDutyInputComplete(et_title.getText().toString(), bp.getSelectedItem().toString(), et_info.getText().toString());
                             }
 
                         }).setNegativeButton("取消", null);
