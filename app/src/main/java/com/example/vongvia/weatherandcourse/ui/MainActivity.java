@@ -1,6 +1,8 @@
 package com.example.vongvia.weatherandcourse.ui;
 
+import android.app.WallpaperManager;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -33,6 +35,8 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import java.util.Date;
 
+import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -196,10 +200,39 @@ public class MainActivity extends RxAppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.tv_scan_all:
-
-                Toast.makeText(MainActivity.this, "即将出炉", Toast.LENGTH_SHORT).show();
+                setBackground();
                 break;
         }
+    }
+
+    void setBackground() {
+        final WallpaperManager instance = WallpaperManager.getInstance(this);
+        int desiredMinimumWidth = this.getWindowManager().getDefaultDisplay().getWidth();
+        int desiredMinimumHeight = this.getWindowManager().getDefaultDisplay().getHeight();
+        instance.suggestDesiredDimensions(desiredMinimumWidth, desiredMinimumHeight);
+        Observable<Void> setBack = Observable.create(new Observable.OnSubscribe<Void>() {
+            @Override
+            public void call(Subscriber<? super Void> subscriber) {
+                try {
+                    Bitmap bmp = Picasso.with(MainActivity.this).load(AppUtils.back_url).get();
+                    instance.setBitmap(bmp);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                subscriber.onNext(null);
+                subscriber.onCompleted();
+            }
+        }).compose(this.<Void>bindToLifecycle())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+        setBack.subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                Toast.makeText(MainActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     @Override
@@ -233,7 +266,7 @@ public class MainActivity extends RxAppCompatActivity implements View.OnClickLis
             Duty newduty = new Duty(null, title, info, type, false, new Date());
             DbServices.getInstance(this).saveNote(newduty);
             if (_rxBus.hasObservers()) {    //是否有观察者，有，则发送一个事件
-                _rxBus.send(new Event.AddEvent(newduty,type));
+                _rxBus.send(new Event.AddEvent(newduty, type));
             }
         }
     }
